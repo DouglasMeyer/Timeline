@@ -1,5 +1,4 @@
 import timeline from './family_timeline.json';
-
-onmessage = function(event) {
+onmessage = function(_event) {
   postMessage({ items: timeline });
 }

@@ -1,8 +1,13 @@
 body {
   margin: 0;
+  overflow: hidden;
 }
 html, body, #root {
   height: 100%;
+}
+text {
+  font-size: 8pt;
+  font-family: sans-serif;
 }
 .popup {
   position: absolute;
