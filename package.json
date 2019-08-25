@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "dev": "parcel index.html item_fetcher.js history.xml",
-    "build": "parcel build index.html item_fetcher.js history.xml"
+    "build": "parcel build --public-url \"/Timeline/\" index.html item_fetcher.js history.xml",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,7 @@
     "eslint": "* || 6.2.1",
     "eslint-import-resolver-parcel": "* || 1.10.0",
     "eslint-plugin-react": "* || 7.14.3",
+    "gh-pages": "^2.1.1",
     "parcel-bundler": "^1.12.3"
   }
 }

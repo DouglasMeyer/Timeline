@@ -32,7 +32,7 @@ onmessage = function({ data: { startDate, endDate } }) {
   console.log({ startDate, endDate });
   // &limit=100&related=true
   // fetch(`http://www.vizgr.org/historical-events/search.php?begin_date=${startDate ? startDate.toArgs().slice(0,3).join('') : '20000101'}&end_date=${endDate ? endDate.toArgs().slice(0,3).join('') : '20001231'}`)
-  fetch('/history.xml')
+  fetch('./history.xml')
     .then(response => response.text())
     .then(xml => {
       const items = parseHistory(xml);
