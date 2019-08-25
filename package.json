@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "parcel index.html item_fetcher.js",
-    "build": "parcel build index.html item_fetcher.js"
+    "dev": "parcel index.html item_fetcher.js history.xml",
+    "build": "parcel build index.html item_fetcher.js history.xml"
   },
   "keywords": [],
   "author": "",

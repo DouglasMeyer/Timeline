@@ -23,7 +23,7 @@ class Time {
   }
   constructor(...args) {
     this.precision = args.length;
-    const [ year, month, ...more ] = args;
+    const [ year, month=1, ...more ] = args;
     this.date = new Date(Date.UTC(year, month-1, ...more));
   }
   toString() {
@@ -91,7 +91,7 @@ const App = () => {
       timeout.current = null;
       itemFetcherPost({ startDate: range[0], endDate: range[1] });
     });
-  }, [ range ]);
+  }, []);
   useEffect(() => {
     let x, y;
     x = y = 0;
@@ -152,7 +152,7 @@ const App = () => {
             <line x1={x} y1="0" x2={x} y2="300" stroke="lightGray" />
             <text x={x} y="280" textAnchor="middle">{Time.fromFrac(yearFrac).toArgs().slice(0,2).join('-')}</text>
           </g>;
-        })
+          })
       }
       { items && items.map((item, index) => {
         const { date, startDate, endDate } = item;
@@ -175,7 +175,7 @@ const App = () => {
           : `${popup.item.startDate ? popup.item.startDate.toString() : ''} - ${popup.item.endDate ? popup.item.endDate.toString() : ''}`
         }
         {' '}
-        <p>{popup.item.description}</p>
+        <p dangerouslySetInnerHTML={{ __html: popup.item.description }} />
       </div>
     }
   </>;
